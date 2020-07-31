@@ -26,7 +26,7 @@ public class AppTest {
     @Test(expected = NumberFormatException.class)
     public void setEmailWithWrongFormatResultException() throws Exception{
         User user = new User();
-        user.setEmail("testexample.com");
+        user.setEmail("test@example.com");
     }
 
     //パスワードのハッシュを設定し、正しいパスワードをチェックするとtrue
