@@ -23,11 +23,10 @@ public class AppTest {
     }
 
     // メールアドレスを誤った書式で設定した場合、例外が発生する
-    @Test(expected = NumberFormatException.class)
+    @Test(expected = InputCheckException)
     public void setEmailWithWrongFormatResultException() throws Exception{
         User user = new User();
-        user.setEmail("testexample.com");
-	assertThat(user.getEmail(), is("test@example.com"));
+        user.setEmail("testexample.com");	
     }
 
     //パスワードのハッシュを設定し、正しいパスワードをチェックするとtrue
