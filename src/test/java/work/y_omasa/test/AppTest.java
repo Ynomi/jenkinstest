@@ -15,11 +15,11 @@ public class AppTest {
     public void setEmailWithCollectFormatAndGetMatchingEmail() {
         User user = new User();
         try {
-            user.setEmail("kbc17a02@stu.kawahara.ac.jp");
+            user.setEmail("test@example.com");
         } catch (InputCheckException e) {
             fail("Email format check thruw exception when it should not");
         }
-        assertThat(user.getEmail(), is("kbc17a02@stu.kawahara.ac.jp"));
+        assertThat(user.getEmail(), is("test@example.com"));
     }
 
     // メールアドレスを誤った書式で設定した場合、例外が発生する
@@ -27,6 +27,7 @@ public class AppTest {
     public void setEmailWithWrongFormatResultException() throws Exception{
         User user = new User();
         user.setEmail("testexample.com");
+	assertThat(user.getEmail(), is("test@example.com"));
     }
 
     //パスワードのハッシュを設定し、正しいパスワードをチェックするとtrue
